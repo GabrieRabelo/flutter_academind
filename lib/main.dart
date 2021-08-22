@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_academind/products.dart';
 
 void main() => runApp(MyApp());
 
@@ -19,7 +20,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       home: Scaffold(
           appBar: AppBar(
-            title: Text('EasyList'),
+            title: Text('My Favorite Foods'),
           ),
           body: Column(
             children: [
@@ -34,17 +35,7 @@ class _MyAppState extends State<MyApp> {
                   child: Text('Add Product'),
                 ),
               ),
-              Column(
-                children: _products.map((element) => Card(
-                  child: Column(
-                    children: <Widget>[
-                      Image.asset('assets/food.jpeg'),
-                      Text(element)
-                    ],
-                  ),
-                ),/**/
-                ).toList(),
-              ),
+              Products(_products),
             ],
           )
       ),
